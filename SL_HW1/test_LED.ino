@@ -17,7 +17,7 @@
 // 6  13  o o o o o o 
 //___
 
-//int i=0;
+int i=0;
 int Loop=0;
 // Longtitude pin figuration (up-down) POS
 int LongPins[] = {2,3,4,5,6,7};

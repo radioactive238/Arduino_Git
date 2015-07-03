@@ -1,14 +1,15 @@
 // Scream Lab HW2
-// Edward Fung 2015.06.30
+// Edward Fung 2015.07.1
 //
 // Little Green Man Running
-// 
+// Probably just the legs running cuz the LEDs aren't enough to display
 //     @ @ 0 0 @ @
 //     @ @ 0 0 @ @
-//     0 0 0 0 0 0
-//     @ 0 0 0 @ @
-//     0 0 @ 0 @ @
-//     @ @ @ 0 @ @
+//     @ @ 0 @ 0 @
+//     0 0 @ @ 0 @
+//     0 @ @ @ 0 @
+//     @ @ @ @ 0 0
+// Refs at "walking man.xlsx"
 //
 // PIN setup:   
 //      [ A B C D E F ] coordinates
@@ -64,66 +65,94 @@ for (i=2; i<=13; i++)
 }
 
 void loop() {
-for(Loop=0;Loop<=200;Loop++)
+for(Loop=0;Loop<=100;Loop++)
   {
-  // action 1
-  // C1,C2,C3,C4 ON
+  // step 1
+  // A4~5,B4,C1~3,D1~2,E3~6,F6 ON
+  LED(0,3);
+  delay(1);
+  LED(0,4);
+  delay(1);
+  LED(1,3);
+  delay(1);
   LED(2,0);
   delay(1);
   LED(2,1);
   delay(1);
   LED(2,2);
   delay(1);
-  LED(2,3);
+  LED(3,0);
   delay(1);
-  }
-  
-  for(Loop=0;Loop<=200;Loop++)
-  {
-  // action 2
-  // C4,D3,E2,F1 ON
-  LED(2,3);
-  delay(1);
-  LED(3,2);
-  delay(1);
-  LED(4,1);
-  delay(1);
-  LED(5,0);
-  delay(1);
-  }
-  
-  for(Loop=0;Loop<=200;Loop++)
-  {
-  // scene 3
-  // C3,D3,E3,F3 ON
-  LED(2,2);
-  delay(1);
-  LED(3,2);
+  LED(3,1);
   delay(1);
   LED(4,2);
   delay(1);
-  LED(5,2);
-  delay(1);
-  }
-  
-  for(Loop=0;Loop<=200;Loop++)
-  {
-  // scene 4
-  // C3,D4,E5,F6 ON
-  LED(2,2);
-  delay(1);
-  LED(3,3);
+  LED(4,3);
   delay(1);
   LED(4,4);
+  delay(1);
+  LED(4,5);
   delay(1);
   LED(5,5);
   delay(1);
   }
-
-for(Loop=0;Loop<=200;Loop++)
+  
+  for(Loop=0;Loop<=100;Loop++)
   {
-  // scene 5
-  // D3,D4,D5,D6 ON
+  // step 2
+  // B4~6,C1~3,C6,D1~2,E3~6,F6 ON
+  LED(1,3);
+  delay(1);
+  LED(1,4);
+  delay(1);
+  LED(1,5);
+  delay(1);
+  LED(2,0);
+  delay(1);
+  LED(2,1);
+  delay(1);
+  LED(2,2);
+  delay(1);
+  LED(2,5);
+  delay(1);
+  LED(3,0);
+  delay(1);
+  LED(3,1);
+  delay(1);
+  LED(4,2);
+  delay(1);
+  LED(4,3);
+  delay(1);
+  LED(4,4);
+  delay(1);
+  LED(4,5);
+  delay(1);
+  LED(5,5);
+  delay(1);
+  }
+  
+  for(Loop=0;Loop<=100;Loop++)
+  {
+  // step 3
+  // B4~6,C1~3,C6,D1~6,E6 ON
+  LED(1,3);
+  delay(1);
+  LED(1,4);
+  delay(1);
+  LED(1,5);
+  delay(1);
+  LED(2,0);
+  delay(1);
+  LED(2,1);
+  delay(1);
+  LED(2,2);
+  delay(1);
+  LED(2,5);
+  delay(1);
+  LED(3,0);
+  delay(1);
+  LED(3,1);
+  delay(1);
   LED(3,2);
   delay(1);
   LED(3,3);
@@ -132,47 +161,99 @@ for(Loop=0;Loop<=200;Loop++)
   delay(1);
   LED(3,5);
   delay(1);
+  LED(4,5);
+  delay(1);
   }
   
-for(Loop=0;Loop<=200;Loop++)
+  for(Loop=0;Loop<=100;Loop++)
   {
-  // scene 6
-  // A6,B5,C4,D3 ON
-  LED(0,5);
+  // step 4
+  // C1~6,D1~2,D6 ON
+  LED(2,0);
   delay(1);
-  LED(1,4);
-  delay(1);
-  LED(2,3);
-  delay(1);
-  LED(3,2);
-  delay(1);
-  }
-
-for(Loop=0;Loop<=200;Loop++)
-  {
-  // scene 7
-  // A4,B4,C4,D4 ON
-  LED(0,3);
-  delay(1);
-  LED(1,3);
-  delay(1);
-  LED(2,3);
-  delay(1);
-  LED(3,3);
-  delay(1);
-  }
-
-for(Loop=0;Loop<=200;Loop++)
-  {
-  // scene 8
-  // A1,B2,C3,D4 ON
-  LED(0,0);
-  delay(1);
-  LED(1,1);
+  LED(2,1);
   delay(1);
   LED(2,2);
   delay(1);
+  LED(2,3);
+  delay(1);
+  LED(2,4);
+  delay(1);
+  LED(2,5);
+  delay(1);
+  LED(3,0);
+  delay(1);
+  LED(3,1);
+  delay(1);
+  LED(2,5);
+  delay(1);
+  }
+
+for(Loop=0;Loop<=100;Loop++)
+  {
+  // step 5
+  // B4~6,C1~3,C6,D1~6,E6 ON
+  LED(1,3);
+  delay(1);
+  LED(1,4);
+  delay(1);
+  LED(1,5);
+  delay(1);
+  LED(2,0);
+  delay(1);
+  LED(2,1);
+  delay(1);
+  LED(2,2);
+  delay(1);
+  LED(2,5);
+  delay(1);
+  LED(3,0);
+  delay(1);
+  LED(3,1);
+  delay(1);
+  LED(3,2);
+  delay(1);
   LED(3,3);
+  delay(1);
+  LED(3,4);
+  delay(1);
+  LED(3,5);
+  delay(1);
+  LED(4,5);
+  delay(1);
+  }
+  
+for(Loop=0;Loop<=100;Loop++)
+  {
+  // step 6
+  // B4~6,C1~3,C6,D1~2,E3~6,F6 ON
+  LED(1,3);
+  delay(1);
+  LED(1,4);
+  delay(1);
+  LED(1,5);
+  delay(1);
+  LED(2,0);
+  delay(1);
+  LED(2,1);
+  delay(1);
+  LED(2,2);
+  delay(1);
+  LED(2,5);
+  delay(1);
+  LED(3,0);
+  delay(1);
+  LED(3,1);
+  delay(1);
+  LED(4,2);
+  delay(1);
+  LED(4,3);
+  delay(1);
+  LED(4,4);
+  delay(1);
+  LED(4,5);
+  delay(1);
+  LED(5,5);
   delay(1);
   }
 
